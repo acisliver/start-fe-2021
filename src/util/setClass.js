@@ -3,9 +3,9 @@ import setDom from "./setDom.js";
 import classTemplate from "../template/classTemplate.js";
 
 //클래스 DOM 세팅
-export default function (){
+export default async function () {
 
-    const classJson = getJson("class")
+    const classJson = await getJson("class")
     const $classTable = document.querySelectorAll(".table")[0].children[1]
 
     setDom(classJson, $classTable, classTemplate)
