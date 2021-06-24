@@ -1,5 +1,15 @@
+import displaySpinner from "./displaySpinner.js";
+import noneDisplaySpinner from "./noneDisplaySpinner.js";
 
+/**
+ * firebase로 배포된 json을 가져온다
+ *
+ * @param {String} content 불러올 데이터 이름
+ * @returns {Promise<any>} 데이터
+ */
 export default  async function (content) {
+    displaySpinner();
+
     let url = ''
 
     switch (content) {
@@ -15,6 +25,8 @@ export default  async function (content) {
 
     const res = await fetch(url)
     const data = await res.json()
-    console.log(data)
+
+    noneDisplaySpinner();
+
     return data
 }
