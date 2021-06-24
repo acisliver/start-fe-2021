@@ -1,3 +1,6 @@
+import filter from "./classFilter.js";
+import quizFilter from "./quizFilter.js"
+
 export default function (){
     //btn-group 가져오기
     const $btnGroups = document.querySelectorAll(".btn-group")
@@ -10,20 +13,25 @@ export default function (){
     //for of 문을 사용하여 각 버튼 가져오기
     //그 후 activeButton 이벤트 추가
     for(let btn of $eduBtnGroup){
-        btn.addEventListener("click", () => activeButton($eduBtnGroup, event))
+        btn.addEventListener("click", () => {
+            activeButton($eduBtnGroup)
+            filter()
+        })
     }
 
     for(let btn of $quizBtnGroup){
-        btn.addEventListener("click", () => activeButton($quizBtnGroup, event))
+        btn.addEventListener("click", () => {
+            activeButton($quizBtnGroup)
+            quizFilter()
+        })
     }
 
     /**
      * button active 동작 함수
      *
      * @param {HTMLCollection} group
-     * @param event
      */
-    function activeButton(group, event) {
+    function activeButton(group) {
         removeActive(group)
         event.target.classList.add("active")
     }

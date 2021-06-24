@@ -8,6 +8,7 @@ import noneDisplaySpinner from "./noneDisplaySpinner.js";
  * @returns {Promise<any>} 데이터
  */
 export default  async function (content) {
+    //json 로딩 시작 시 스피너 display
     displaySpinner();
 
     let url = ''
@@ -26,6 +27,7 @@ export default  async function (content) {
     const res = await fetch(url)
     const data = await res.json()
 
+    //로딩이 끝나면 spinner 제거
     noneDisplaySpinner();
 
     return data
