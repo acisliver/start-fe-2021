@@ -18,7 +18,7 @@ export default  async function (content) {
             url = "https://firebasestorage.googleapis.com/v0/b/start-fe.appspot.com/o/class.json?alt=media&token=75d2c5fa-2cdd-43a6-93d0-0da71cd42592"
             break
         case "quiz":
-            url = "https://firebasestorage.googleapis.com/v0/b/start-fe.appspot.com/o/quiz.json?alt=media&token=35339125-4da1-4ac7-ac21-23f1f0c3038b"
+            url = "https://firebasestorage.googleapis.com/v0/b/start-fe.appspot.com/o/quiz.json?alt=media&token=b63015b1-ce62-4be7-9b01-b25ce4ee7232"
             break
         default:
             break
